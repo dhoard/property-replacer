@@ -18,6 +18,12 @@ This has only been built / tested on Ubuntu 16.04.03 LTS using g++, but should b
 
 # Known Issues
 
+DO NOT CONSIDER THIS A 100% MATCH WITH REGARDS TO JAVA PROPERTIES FILE HANDLING ... IT IS NOT
+
+keys with spaces will be trimmed
+
+values with spaces will be left trimmed, but trailing spaces are not trimmed (per Java's implementation)
+
 The code to parse and load the Java formatted properties file doesn't handle ...
 
 unicode escape sequences (`\u003d')
@@ -25,10 +31,6 @@ unicode escape sequences (`\u003d')
 escaped equals (`\\=`)
 
 multi-line values
-
-Keys with spaces will be trimmed.
-
-Values with spaces will be left trimmed, trailing spaces are not trimmed (per Java's implementation)
 
 # Building the code
 
