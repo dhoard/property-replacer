@@ -29,11 +29,13 @@ const std::string TRIM_DELIMITERS = " \f\n\r\t\v";
 }
 
 std::string RightTrim(const std::string& str) {
-    std::string::size_type s = str.find_last_not_of(TRIM_DELIMITERS);
-    if (s == std::string::npos) {
-        return "";
+    std::string rstr = rtrim(str);
+
+    while (rstr != rtrim(rstr)) {
+        rstr = rtrim(rstr);
     }
-    return str.substr(0, s+1);
+
+    return rstr;
 }
 
 std::string LeftTrim(const std::string& str) {
@@ -87,6 +89,14 @@ bool IsEmptyLine(const std::string& str) {
 } // namespace cppproperties
 
 const std::string TRIM_DELIMITERS = " \f\n\r\t\v";
+
+std::string rtrim(const std::string& str) {
+    std::string::size_type s = str.find_last_not_of(TRIM_DELIMITERS);
+    if (s == std::string::npos) {
+        return "";
+    }
+    return str.substr(0, s+1);
+}
 
 std::string ltrim(const std::string& str) {
     std::string::size_type s = str.find_first_not_of(TRIM_DELIMITERS);
