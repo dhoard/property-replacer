@@ -30,7 +30,7 @@ Clone the repo and run ...
 
 # License
 
-MIT
+MIT / https://github.com/dhoard/property-replacer/blob/master/LICENSE
 
 # Credits
 
